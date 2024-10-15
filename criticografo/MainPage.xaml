@@ -13,23 +13,28 @@
 
         <Label Text="Genero:" Padding="20,20,20,0" FontSize="18"/>
 
-        <FlexLayout  JustifyContent="SpaceAround">
-            <StackLayout >
-            <RadioButton  /> 
-            <Label Text="Hombre" />
-            
 
-            <RadioButton />
-            <Label Text="Mujer" />
-        </StackLayout>
+        <FlexLayout JustifyContent="SpaceAround">
+            <StackLayout>
+                <FlexLayout AlignItems="Center">
+                    <RadioButton GroupName="Genero"  x:Name="Hombre"/>
+                    <Label Text="Hombre" VerticalOptions="Center" />
+                </FlexLayout>
+                <FlexLayout AlignItems="Center">
+                    <RadioButton GroupName="Genero" x:Name="Mujer"/>
+                    <Label Text="Mujer" VerticalOptions="Center" />
+                </FlexLayout>
+            </StackLayout>
         </FlexLayout>
+
+
 
         <FlexLayout JustifyContent="Center">
             <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="35" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="35" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -38,25 +43,47 @@
                 <RowDefinition Height="40" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <CheckBox Grid.Row="0" Grid.Column="0"/>
-            <Label Text="Alto" Grid.Row="0" Grid.Column="1"/>
-            <CheckBox  Grid.Row="0" Grid.Column="2"/>
-            <Label Text="Feo" Grid.Row="0" Grid.Column="3"/>
 
-            <CheckBox  Grid.Row="1" Grid.Column="0"/>
-            <Label Text="Listo" Grid.Row="1" Grid.Column="1"/>
-            <CheckBox  Grid.Row="1" Grid.Column="2"/>
-            <Label Text="Extravagante" Grid.Row="1" Grid.Column="3"/>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <CheckBox x:Name="Alto"/>
+                    <Label Text="Alto" VerticalOptions="Center" />
+                </StackLayout>
 
-            <CheckBox  Grid.Row="2" Grid.Column="0"/>
-            <Label Text="Raro" Grid.Row="2" Grid.Column="1"/>
-            <CheckBox  Grid.Row="2" Grid.Column="2"/>
-            <Label Text="Grande" Grid.Row="2" Grid.Column="3"/>
-        </Grid>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <CheckBox x:Name="Feo"/>
+                    <Label Text="Feo" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                    <CheckBox x:Name="Listo"/>
+                    <Label Text="Listo" VerticalOptions="Center" />
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <CheckBox x:Name="Extravagante"/>
+                    <Label Text="Extravagante" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                    <CheckBox x:Name="Raro"/>
+                    <Label Text="Raro" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                    <CheckBox x:Name="Grande"/>
+                    <Label Text="Grande" VerticalOptions="Center" />
+                </StackLayout>
+            </Grid>
 
         </FlexLayout>
-        <Button Text="Criticar"  />
-        
+
+     
+        <FlexLayout JustifyContent="Center">
+            <Button Text="Criticar" Clicked="Btn_Criticar" FontSize="26"/>
+        </FlexLayout>
+
+
     </StackLayout>
 
 </ContentPage>
